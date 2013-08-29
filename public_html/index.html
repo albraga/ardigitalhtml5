@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>AR</title>
+        <link href="css/ar.css" rel="stylesheet"/>
+        <script src="js/unidades.js"></script>
+        <script src="js/ar.js"></script>
+    </head>
+    <body onload="init();">
+        <table id="tabela1" class="BordaTodas">
+            <tbody><tr>
+                    <td id="um" rowspan="12" valign="bottom" class="BordaDirTracejada"><div align="center"><img src="img/ar2_r3_c2.gif"></div></td>
+                    <td width="7" height="30">&nbsp;</td>
+                    <td width="124" class="BordaInf"><img src="img/logo_correios.gif" width="119" height="25" alt=""></td>
+                    <td width="86" class="style58 BordaInf"><span class="style59">AVISO DE <br>
+                            RECEBIMENTO</span></td>
+                    <td colspan="3" align="center" valign="middle" class="BordaInf style60">AR</td>
+                    <td align="center" valign="middle" class="BordaInf style62">&nbsp;</td>
+                    <td width="126" class="BordaInfEsq">DATA DE POSTAGEM <p><big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="hoje"></span></big></p></td>
+                </tr>
+                <tr>
+                    <td height="32">&nbsp;</td>
+                    <td colspan="6" rowspan="2" class="BordaInfEsq">
+
+                        <table id="tabela2">
+                            <tbody><tr>
+                                    <td valign="top" class="style24">
+                                        <span class="style36">DESTINATÁRIO</span><br>
+                                        <span class="style38"><span class="orgao"></span><br>
+                                            <span class="logradouro"></span><br>
+                                            <span class="bairro"></span><br>
+                                            <span class="cep"></span> <span> - </span> <span class="localidade"></span> <span> - PB</span>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" valign="bottom"><div id="divCodBarras" style="border: 1px dotted black; font-family: Arial, Helvetica, sans-serif; font-size: 8px;">(CÓDIGO DE BARRAS OU Nº DE REGISTRO DO OBJETO)</div></td>
+                                </tr>
+                                <tr>
+                                    <td align="left" valign="bottom">
+                                        <span class="style42">ENDEREÇO PARA DEVOLUÇÃO DO AR </span><br>
+                                        <span class="style43">SERT (GMAT01-PB)<br>
+                                            RODOVIA BR-230 KM 24,5 -<br>
+                                            CRISTO REDENTOR <br>
+                                            58071-900 - JOÃO PESSOA - PB
+                                        </span> </td>
+                                </tr>
+                            </tbody>
+                        </table> 
+
+
+                    </td>
+                    <td class="BordaInfEsq">UNIDADE DE POSTAGEM <p><big>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AC ÁGUA FRIA</big></p></td>
+                </tr>
+                <tr>
+                    <td height="148">&nbsp;</td>
+                    <td align="center" class="BordaInfEsq">CARIMBO <br> UNIDADE DE ENTREGA </td>
+                </tr>
+                <tr>
+                    <td height="50">&nbsp;</td>
+                    <td colspan="2" align="center" class="BordaEsq"><strong>TENTATIVAS DE ENTREGA </strong></td>
+                    <td colspan="5" class="BordaInfEsq">CONTEÚDO: 
+                <br><big>LEITOR DE CÓDIGO DE BARRAS C/FIO PIB <span id="pib"></span> e  SÉRIE <span id="serie"></span> adquirido através do CONTRATO 058/2013</big></td>
+                </tr>
+                <tr>
+                    <td height="71" rowspan="6">&nbsp;</td>
+                    <td rowspan="5" class="BordaEsq">1ª ________/________/________<br>
+                        <br>
+                        2ª ________/________/________<br>
+                        <br>
+                        3ª ________/________/________ </td>
+                    <td rowspan="5" align="center">______ : ______h<br>
+                        <br>
+                        ______ : ______h<br>
+                        <br>
+                        ______ : ______ h </td>
+                    <td colspan="4" align="center" valign="top" class="style57 BordaEsq"><strong>MOTIVO DE DEVOLUÇÃO </strong></td>
+                    <td rowspan="6" class="BordaInfEsq">RUBRICA E MATRÍCULA DO<br>
+                        CARTEIRO </td>
+                </tr>
+                <tr>
+                    <td width="21" rowspan="5" class="BordaInfEsq"><img src="img/ar2_r6_c10.gif" alt=""></td>
+                    <td width="71"><span class="style57">Mudou-se</span></td>
+                    <td width="15" rowspan="5" class="BordaInf"><img src="img/ar2_r5_c5.gif" alt=""></td>
+                    <td width="49"><span class="style57">Recusado</span></td>
+                </tr>
+                <tr>
+                    <td><span class="style57">Endereço insuficiente </span></td>
+                    <td width="49"><span class="style57">Não procurado </span></td>
+                </tr>
+                <tr>
+                    <td><span class="style57">Não existe o número </span></td>
+                    <td width="49"><span class="style57">Ausente</span></td>
+                </tr>
+                <tr>
+                    <td valign="middle"><span class="style57">Desconhecido</span></td>
+                    <td width="49" valign="middle"><span class="style57">Falecido</span></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="BordaInfEsq"><br>
+                        <span class="style57"></span></td>
+                    <td class="BordaInf style57">Outros</td>
+                    <td width="49" align="right" valign="bottom" class="BordaInf style58">.</td>
+                </tr>
+                <tr>
+                    <td height="30">&nbsp;</td>
+                    <td colspan="6" class="BordaInfEsq">RUBRICA E MATRÍCULA DO FUNCIONÁRIO RESPONSÁVEL PELO RECEBIMENTO</td>
+                    <td class="BordaInfEsq">DATA DE ENTREGA </td>
+                </tr>
+                <tr>
+                    <td height="30">&nbsp;</td>
+                    <td colspan="6" class="BordaEsq">NOME LEGÍVEL DO FUNCIONÁRIO RESPONSÁVEL PELO RECEBIMENTO</td>
+                    
+                </tr>
+            </tbody>
+        </table> 
+        <div id="depara">
+            <b>DESTINATÁRIO:</b> <br/>
+            <span class="orgao"></span> <br>
+            <span class="logradouro"></span> <br>
+            <span class="bairro"></span> <br>
+            <span class="cep"></span> <span> - </span> <span class="localidade"></span> <span> - PB</span><pre>
+
+
+
+
+
+            </pre>
+            <b>REMETENTE:</b> <br/>
+            SERT (GMAT01-PB)<br>
+            RODOVIA BR-230 KM 24,5 <br>
+            BAIRRO CRISTO REDENTOR <br>
+            CEP 58071-900 - JOÃO PESSOA - PB
+        </div>
+
+
+        <div id="openModal" class="modalDialog">
+            <div>
+                <a href="#close" title="Close" class="close">X</a>
+                <h2>Modal Box</h2>
+                <form>
+                    <select id="orgaos">
+                    </select>
+                </form>
+                <button type="button" onclick="feel();">Ok</button>
+            </div>
+        </div>
+
+
+
+
+    </body>
+</html>		
