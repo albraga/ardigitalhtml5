@@ -1,4 +1,4 @@
-﻿function Unidade(orgao, logradouro, bairro, localidade, cep, pib, serie) {
+function Unidade(orgao, logradouro, bairro, localidade, cep, pib, serie) {
 	this.orgao = orgao;
 	this.logradouro = logradouro;
 	this.bairro = bairro;

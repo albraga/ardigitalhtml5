@@ -69,6 +69,18 @@
 
 .close:hover { background: #00d9ff; }
 
+#tarea {
+width: 400px;
+height: 200px;
+position: absolute;
+top: 550px;
+left: 400px;
+}
+
+@media print {
+    #tarea { display: none; }
+}
+
 #depara {
     position: absolute;
     top: 600px;

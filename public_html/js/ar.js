@@ -20,6 +20,9 @@ function feelSelect() {
             x.add(option, null);
         }
     }
+    if (sessionStorage.unis) {
+        document.getElementById("tarea").value = sessionStorage.unis;
+    }
 }
 
 function feel() {
@@ -36,11 +39,19 @@ function feel() {
     document.getElementsByClassName("cep")[1].innerHTML = unidades[x].cep;
     document.getElementById("pib").innerHTML = unidades[x].pib;
     document.getElementById("serie").innerHTML = unidades[x].serie;
+    
+    if (sessionStorage.unis) {
+        sessionStorage.unis += unidades[x].pib + " " + unidades[x].serie + " " + unidades[x].orgao + "\n";
+    } else {
+        sessionStorage.unis = unidades[x].pib + " " + unidades[x].serie + " " + unidades[x].orgao + "\n";
+    }
+    document.getElementById("tarea").value = sessionStorage.unis;
     window.location.assign('#close');
 }
 
 function hoje() {
     var x = document.getElementById("hoje");
     var h = new Date();
-    x.innerHTML = h.getDate() + "/" + (h.getMonth()+1) + "/" + h.getUTCFullYear();
+    x.innerHTML = h.getDate() + "/" + (h.getMonth() + 1) + "/" + h.getUTCFullYear();
 }
+
