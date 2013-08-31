@@ -41,9 +41,9 @@ function feel() {
     document.getElementById("serie").innerHTML = unidades[x].serie;
     
     if (sessionStorage.unis) {
-        sessionStorage.unis += unidades[x].pib + " " + unidades[x].serie + " " + unidades[x].orgao + "\n";
+        sessionStorage.unis += unidades[x].pib + " " + unidades[x].serie + " " + unidades[x].orgao + " CEP " + unidades[x].cep + "\n";
     } else {
-        sessionStorage.unis = unidades[x].pib + " " + unidades[x].serie + " " + unidades[x].orgao + "\n";
+        sessionStorage.unis = unidades[x].pib + " " + unidades[x].serie + " " + unidades[x].orgao + " CEP " + unidades[x].cep + "\n";
     }
     document.getElementById("tarea").value = sessionStorage.unis;
     window.location.assign('#close');

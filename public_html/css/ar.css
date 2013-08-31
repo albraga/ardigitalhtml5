@@ -70,11 +70,11 @@
 .close:hover { background: #00d9ff; }
 
 #tarea {
-width: 400px;
+width: 450px;
 height: 200px;
 position: absolute;
 top: 550px;
-left: 400px;
+left: 350px;
 }
 
 @media print {
