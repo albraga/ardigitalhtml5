@@ -1,11 +1,11 @@
 
 function init() {
     window.location.assign('#openModal');
-    feelSelect();
+    fillSelect();
     hoje();
 }
 
-function feelSelect() {
+function fillSelect() {
     var x = document.getElementById("series");
     for (var i = 0; i < unidades.length; i++) {
         var option = document.createElement("option");
@@ -21,11 +21,11 @@ function feelSelect() {
         }
     }
     if (sessionStorage.unis) {
-        document.getElementById("tarea").value = sessionStorage.unis;
+        document.getElementById("tarea").value = fillTextArea();
     }
 }
 
-function feel() {
+function fillDocument() {
     var x = document.getElementById("series").selectedIndex;
     document.getElementsByClassName("orgao")[0].innerHTML = unidades[x].orgao;
     document.getElementsByClassName("orgao")[1].innerHTML = unidades[x].orgao;
@@ -41,12 +41,22 @@ function feel() {
     document.getElementById("serie").innerHTML = unidades[x].serie;
     
     if (sessionStorage.unis) {
-        sessionStorage.unis += unidades[x].pib + " " + unidades[x].serie + " " + unidades[x].orgao + " CEP " + unidades[x].cep + "\n";
+        sessionStorage.unis += unidades[x].pib + " " + unidades[x].serie + " " + unidades[x].orgao + "\n";
     } else {
-        sessionStorage.unis = unidades[x].pib + " " + unidades[x].serie + " " + unidades[x].orgao + " CEP " + unidades[x].cep + "\n";
+        sessionStorage.unis = unidades[x].pib + " " + unidades[x].serie + " " + unidades[x].orgao + "\n";
     }
-    document.getElementById("tarea").value = sessionStorage.unis;
+    document.getElementById("tarea").value = fillTextArea();
     window.location.assign('#close');
+}
+
+function fillTextArea() {
+    var lines = sessionStorage.unis.split("\n");
+    var orgaos = [];
+    for (var ii = 0; ii < lines.length; ii++) {
+        orgaos[ii] = "PB - " + lines[ii].slice(19);
+    }
+    
+    return sessionStorage.unis + "\n" + orgaos.join();
 }
 
 function hoje() {
