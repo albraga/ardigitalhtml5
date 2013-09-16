@@ -6,10 +6,10 @@ function init() {
 }
 
 function feelSelect() {
-    var x = document.getElementById("orgaos");
+    var x = document.getElementById("series");
     for (var i = 0; i < unidades.length; i++) {
         var option = document.createElement("option");
-        option.text = unidades[i].orgao;
+        option.text = unidades[i].serie;
         try
         {
             // for IE earlier than version 8
@@ -26,7 +26,7 @@ function feelSelect() {
 }
 
 function feel() {
-    var x = document.getElementById("orgaos").selectedIndex;
+    var x = document.getElementById("series").selectedIndex;
     document.getElementsByClassName("orgao")[0].innerHTML = unidades[x].orgao;
     document.getElementsByClassName("orgao")[1].innerHTML = unidades[x].orgao;
     document.getElementsByClassName("logradouro")[0].innerHTML = unidades[x].logradouro;
