@@ -39,11 +39,11 @@ function fillDocument() {
     document.getElementsByClassName("cep")[1].innerHTML = unidades[x].cep;
     document.getElementById("pib").innerHTML = unidades[x].pib;
     document.getElementById("serie").innerHTML = unidades[x].serie;
-    
     if (sessionStorage.unis) {
-        sessionStorage.unis += unidades[x].pib + " " + unidades[x].serie + " " + unidades[x].orgao + "\n";
+        sessionStorage.unis += "Item " + sessionStorage.count++ + " - PIB:" + unidades[x].pib + " - Série:" + unidades[x].serie + " " + unidades[x].orgao + "\n";
     } else {
-        sessionStorage.unis = unidades[x].pib + " " + unidades[x].serie + " " + unidades[x].orgao + "\n";
+        sessionStorage.count = 1;
+        sessionStorage.unis = "Item " + sessionStorage.count++ + " - PIB:" + unidades[x].pib + " - Série:" + unidades[x].serie + " " + unidades[x].orgao + "\n";
     }
     document.getElementById("tarea").value = fillTextArea();
     window.location.assign('#close');
@@ -53,7 +53,7 @@ function fillTextArea() {
     var lines = sessionStorage.unis.split("\n");
     var orgaos = [];
     for (var ii = 0; ii < lines.length; ii++) {
-        orgaos[ii] = "PB - " + lines[ii].slice(19);
+        orgaos[ii] = " PB - " + lines[ii].slice(43);
     }
     
     return sessionStorage.unis + "\n" + orgaos.join();
