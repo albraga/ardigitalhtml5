@@ -53,7 +53,7 @@ function fillTextArea() {
     var lines = sessionStorage.unis.split("\n");
     var orgaos = [];
     for (var ii = 0; ii < lines.length; ii++) {
-        orgaos[ii] = " pb -" + lines[ii].slice(39);
+        orgaos[ii] = " pb - " + lines[ii].slice(40);
     }
     var toEmail = "\n" + orgaos.join();
     var replaced = toEmail.replace(/,/g,";");
