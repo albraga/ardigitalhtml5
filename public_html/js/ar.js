@@ -53,10 +53,11 @@ function fillTextArea() {
     var lines = sessionStorage.unis.split("\n");
     var orgaos = [];
     for (var ii = 0; ii < lines.length; ii++) {
-        orgaos[ii] = " PB - " + lines[ii].slice(43);
+        orgaos[ii] = " pb -" + lines[ii].slice(39);
     }
-    
-    return sessionStorage.unis + "\n" + orgaos.join();
+    var toEmail = "\n" + orgaos.join();
+    var replaced = toEmail.replace(/,/g,";");
+    return sessionStorage.unis + replaced.toLowerCase();
 }
 
 function hoje() {
