@@ -61,7 +61,7 @@
     <td height="50">&nbsp;</td>
     <td colspan="2" align="center" class="BordaEsq"><strong>TENTATIVAS DE ENTREGA </strong></td>
     <td colspan="5" class="BordaInfEsq">CONTEÚDO: 
-<br><big>LEITOR DE CÓDIGO DE BARRAS C/FIO PIB <span id="pib"></span> e  SÉRIE <span id="serie"></span> adquirido através do CONTRATO 058/2013</big></td>
+<br><big><span id="objeto"></span> PIB <span id="pib"></span> e  SÉRIE <span id="serie"></span> <span id="contrat"></span></big></td>
 </tr>
 <tr>
     <td height="71" rowspan="6">&nbsp;</td>
@@ -145,6 +145,8 @@
             <select id="series">
             </select>
         </form>
+        <h2>Objeto: </h2><input type="text" size="50" id="obj" value="LEITOR DE CÓDIGO DE BARRAS C/FIO"/>
+        <h2>Contrato: </h2><input type="text" size="50" id="contra" value="adquirido através do CONTRATO 041/2014"/>
         <button type="button" onclick="fillDocument();">Ok</button>
     </div>
 </div>

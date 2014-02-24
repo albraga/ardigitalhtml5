@@ -45,6 +45,8 @@ function fillDocument() {
         sessionStorage.count = 1;
         sessionStorage.unis = "Item " + sessionStorage.count++ + " - PIB:" + unidades[x].pib + " - Série:" + unidades[x].serie + "\u2008" + unidades[x].orgao + "\n";
     }
+    document.getElementById("objeto").innerHTML = document.getElementById("obj").value;
+    document.getElementById("contrat").innerHTML = document.getElementById("contra").value;
     document.getElementById("tarea").value = fillTextArea();
     window.location.assign('#close');
 }
