@@ -1,7 +1,32 @@
+var unidades = new Array();
+
+function Unidade(orgao, logradouro, bairro, localidade, cep, pib, serie) {
+	this.orgao = orgao;
+	this.logradouro = logradouro;
+	this.bairro = bairro;
+	this.localidade = localidade;
+	this.cep = cep;
+	this.pib = pib;
+	this.serie = serie;
+}
+
+function fillUnidades() {
+    var tAreaUnidades = document.getElementById("tAreaUnidades");
+    var tmp = tAreaUnidades.value.split("|");
+    var c = 0;
+    for (var x = 0; x < tAreaUnidades.rows; x++) {
+        unidades.push(new Unidade(tmp[c], tmp[c + 1], tmp[c + 2], tmp[c + 3], tmp[c + 4], tmp[c + 5], tmp[c + 6]));
+        c += 7;
+    }  
+}
+
+function carregar() {
+    fillUnidades();
+    fillSelect();
+}
 
 function init() {
     window.location.assign('#openModal');
-    fillSelect();
     hoje();
 }
 

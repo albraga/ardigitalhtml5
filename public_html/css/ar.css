@@ -37,7 +37,7 @@
 }
 
 .modalDialog > div {
-    width: 400px;
+    width: 800px;
     position: relative;
     margin: 10% auto;
     padding: 5px 20px 13px 20px;
@@ -75,6 +75,11 @@ height: 200px;
 position: absolute;
 top: 550px;
 left: 350px;
+}
+
+#tAreaUnidades {
+width: 750px;
+height: 100px;
 }
 
 @media print {

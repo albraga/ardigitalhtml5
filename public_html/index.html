@@ -4,7 +4,6 @@
         <meta charset="UTF-8" />
         <title>AR</title>
         <link href="css/ar.css" rel="stylesheet"/>
-        <script src="js/unidades.js"></script>
         <script src="js/ar.js"></script>
     </head>
     <body onload="init();">
@@ -148,6 +147,11 @@
         </form>
         <h2>Objeto: </h2><input type="text" size="50" id="obj" value="LEITOR DE CÓDIGO DE BARRAS C/FIO"/>
         <h2>Contrato: </h2><input type="text" size="50" id="contra" value="adquirido através do CONTRATO 041/2014"/>
+        <p>AC|RUA|BAIRRO|CIDADE|CEP|PIB|SÉRIE</p>
+        <textarea id="tAreaUnidades">
+        </textarea>
+        <br>
+        <button type="button" onclick="carregar();">Carregar</button>
         <button type="button" onclick="fillDocument();">Ok</button>
     </div>
 </div>
