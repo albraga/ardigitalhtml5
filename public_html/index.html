@@ -105,7 +105,7 @@
 </tr>
 <tr>
     <td height="30">&nbsp;</td>
-    <td colspan="6" class="BordaInfEsq">TERMO DE ENTREGA: <br>Declaramos para os devidos fins, que o equipamento relacionado foi entregue a este Órgão, acompanhado de seus respectivos componentes. Este equipamento não apresentou problemas na sua estrutura física externa e está em perfeito estado de funcionamento.</td>
+    <td colspan="6" class="BordaInfEsq">TERMO DE ENTREGA: <br><span id="termo">Declaramos para os devidos fins, que o equipamento relacionado foi entregue a este Órgão, acompanhado de seus respectivos componentes. Este equipamento não apresentou problemas na sua estrutura física externa e está em perfeito estado de funcionamento</span></td>
     <td class="BordaInfEsq">DATA DE ENTREGA </td>
 </tr>
 <tr>
@@ -145,12 +145,13 @@
             <select id="series">
             </select>
         </form>
-        <h2>Objeto: </h2><input type="text" size="50" id="obj" value="LEITOR DE CÓDIGO DE BARRAS C/FIO"/>
-        <h2>Contrato: </h2><input type="text" size="50" id="contra" value="adquirido através do CONTRATO 041/2014"/>
+        <h2>Objeto: </h2><input type="text" size="50" id="obj" value="TIPO DO EQUIPAMENTO E MODELO"/>
+        <h2>Contrato: </h2><input type="text" size="50" id="contra" value="adquirido através do CONTRATO 0/201"/>
         <p>AC|RUA|BAIRRO|CIDADE|CEP|PIB|SÉRIE</p>
         <textarea id="tAreaUnidades">
         </textarea>
         <br>
+        <input type="checkbox" onchange="showTermo();" id="cBoxTermo">Termo de Entrega
         <button type="button" onclick="carregar();">Carregar</button>
         <button type="button" onclick="fillDocument();">Ok</button>
     </div>

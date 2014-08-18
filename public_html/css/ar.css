@@ -82,6 +82,10 @@ width: 750px;
 height: 100px;
 }
 
+#termo {
+    visibility: hidden;
+}
+
 @media print {
     #tarea { display: none; }
 }

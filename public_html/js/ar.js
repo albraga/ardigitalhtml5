@@ -20,6 +20,14 @@ function fillUnidades() {
     }  
 }
 
+function showTermo() {
+    var cbox = document.querySelector("#cBoxTermo");
+    if(cbox.checked) {
+    document.getElementById("termo").style.visibility="visible";
+} else {
+    document.getElementById("termo").style.visibility="hidden";
+}
+}
 function carregar() {
     fillUnidades();
     fillSelect();
