@@ -73,10 +73,10 @@ function fillDocument() {
     document.getElementById("pib").innerHTML = unidades[x].pib;
     document.getElementById("serie").innerHTML = unidades[x].serie;
     if (sessionStorage.unis) {
-        sessionStorage.unis += "Item " + sessionStorage.count++ + " - PIB:" + unidades[x].pib + " - Série:" + unidades[x].serie + "\u2008" + unidades[x].orgao + "\n";
+        sessionStorage.unis += "Item " + sessionStorage.count++ + " - PIB:" + unidades[x].pib + " - Série:" + unidades[x].serie + "\u2008" + unidades[x].orgao + "\u2008" + "(" + unidades[x].cep + ")" + "\n";
     } else {
         sessionStorage.count = 1;
-        sessionStorage.unis = "Item " + sessionStorage.count++ + " - PIB:" + unidades[x].pib + " - Série:" + unidades[x].serie + "\u2008" + unidades[x].orgao + "\n";
+        sessionStorage.unis += "Item " + sessionStorage.count++ + " - PIB:" + unidades[x].pib + " - Série:" + unidades[x].serie + "\u2008" + unidades[x].orgao + "\u2008" + "(" + unidades[x].cep + ")" + "\n";
     }
     document.getElementById("objeto").innerHTML = document.getElementById("obj").value;
     document.getElementById("contrat").innerHTML = document.getElementById("contra").value;
