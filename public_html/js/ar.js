@@ -1,6 +1,6 @@
-var unidades = new Array();
+var objetos = new Array();
 
-function Unidade(orgao, logradouro, bairro, localidade, cep, pib, serie) {
+function Objeto(orgao, logradouro, bairro, localidade, cep, pib, serie, identificador) {
 	this.orgao = orgao;
 	this.logradouro = logradouro;
 	this.bairro = bairro;
@@ -8,15 +8,16 @@ function Unidade(orgao, logradouro, bairro, localidade, cep, pib, serie) {
 	this.cep = cep;
 	this.pib = pib;
 	this.serie = serie;
+        this.identificador = identificador;
 }
 
-function fillUnidades() {
+function fillObjetos() {
     var tAreaUnidades = document.getElementById("tAreaUnidades");
-    var tmp = tAreaUnidades.value.split("|");
+    var tmp = tAreaUnidades.value.split(",");
     var c = 0;
     for (var x = 0; x < tAreaUnidades.rows; x++) {
-        unidades.push(new Unidade(tmp[c], tmp[c + 1], tmp[c + 2], tmp[c + 3], tmp[c + 4], tmp[c + 5], tmp[c + 6]));
-        c += 7;
+        objetos.push(new Objeto(tmp[c], tmp[c + 1], tmp[c + 2], tmp[c + 3], tmp[c + 4], tmp[c + 5], tmp[c + 6], tmp[c + 7]));
+        c += 8;
     }  
 }
 
@@ -29,7 +30,7 @@ function showTermo() {
 }
 }
 function carregar() {
-    fillUnidades();
+    fillObjetos();
     fillSelect();
 }
 
@@ -40,9 +41,9 @@ function init() {
 
 function fillSelect() {
     var x = document.getElementById("series");
-    for (var i = 0; i < unidades.length; i++) {
+    for (var i = 0; i < objetos.length; i++) {
         var option = document.createElement("option");
-        option.text = unidades[i].serie;
+        option.text = objetos[i].serie;
         try
         {
             // for IE earlier than version 8
@@ -60,23 +61,24 @@ function fillSelect() {
 
 function fillDocument() {
     var x = document.getElementById("series").selectedIndex;
-    document.getElementsByClassName("orgao")[0].innerHTML = unidades[x].orgao;
-    document.getElementsByClassName("orgao")[1].innerHTML = unidades[x].orgao;
-    document.getElementsByClassName("logradouro")[0].innerHTML = unidades[x].logradouro;
-    document.getElementsByClassName("logradouro")[1].innerHTML = unidades[x].logradouro;
-    document.getElementsByClassName("bairro")[0].innerHTML = unidades[x].bairro;
-    document.getElementsByClassName("bairro")[1].innerHTML = unidades[x].bairro;
-    document.getElementsByClassName("localidade")[0].innerHTML = unidades[x].localidade;
-    document.getElementsByClassName("localidade")[1].innerHTML = unidades[x].localidade;
-    document.getElementsByClassName("cep")[0].innerHTML = unidades[x].cep;
-    document.getElementsByClassName("cep")[1].innerHTML = unidades[x].cep;
-    document.getElementById("pib").innerHTML = unidades[x].pib;
-    document.getElementById("serie").innerHTML = unidades[x].serie;
+    document.getElementsByClassName("orgao")[0].innerHTML = objetos[x].orgao;
+    document.getElementsByClassName("orgao")[1].innerHTML = objetos[x].orgao;
+    document.getElementsByClassName("logradouro")[0].innerHTML = objetos[x].logradouro;
+    document.getElementsByClassName("logradouro")[1].innerHTML = objetos[x].logradouro;
+    document.getElementsByClassName("bairro")[0].innerHTML = objetos[x].bairro;
+    document.getElementsByClassName("bairro")[1].innerHTML = objetos[x].bairro;
+    document.getElementsByClassName("localidade")[0].innerHTML = objetos[x].localidade;
+    document.getElementsByClassName("localidade")[1].innerHTML = objetos[x].localidade;
+    document.getElementsByClassName("cep")[0].innerHTML = objetos[x].cep;
+    document.getElementsByClassName("cep")[1].innerHTML = objetos[x].cep;
+    document.getElementById("pib").innerHTML = objetos[x].pib;
+    document.getElementById("serie").innerHTML = objetos[x].serie;
+    document.getElementById("divCodBarras").innerHTML = objetos[x].identificador;
     if (sessionStorage.unis) {
-        sessionStorage.unis += "Item " + sessionStorage.count++ + " - PIB:" + unidades[x].pib + " - Série:" + unidades[x].serie + "\u2008" + unidades[x].orgao + "\u2008" + "(" + unidades[x].cep + ")" + "\n";
+        sessionStorage.unis += "Item " + sessionStorage.count++ + " - PIB:" + objetos[x].pib + " - Série:" + objetos[x].serie + "\u2008" + objetos[x].orgao + "\u2008" + "(" + objetos[x].cep + ")" + "\n";
     } else {
         sessionStorage.count = 1;
-        sessionStorage.unis += "Item " + sessionStorage.count++ + " - PIB:" + unidades[x].pib + " - Série:" + unidades[x].serie + "\u2008" + unidades[x].orgao + "\u2008" + "(" + unidades[x].cep + ")" + "\n";
+        sessionStorage.unis += "Item " + sessionStorage.count++ + " - PIB:" + objetos[x].pib + " - Série:" + objetos[x].serie + "\u2008" + objetos[x].orgao + "\u2008" + "(" + objetos[x].cep + ")" + "\n";
     }
     document.getElementById("objeto").innerHTML = document.getElementById("obj").value;
     document.getElementById("contrat").innerHTML = document.getElementById("contra").value;
