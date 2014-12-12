@@ -15,7 +15,7 @@ function fillObjetos() {
     var tAreaUnidades = document.getElementById("tAreaUnidades");
     var tmp = tAreaUnidades.value.split(",");
     var c = 0;
-    for (var x = 0; x < tAreaUnidades.rows; x++) {
+    for (var x = 0; x < (tmp.length/8); x++) {
         objetos.push(new Objeto(tmp[c], tmp[c + 1], tmp[c + 2], tmp[c + 3], tmp[c + 4], tmp[c + 5], tmp[c + 6], tmp[c + 7]));
         c += 8;
     }  
